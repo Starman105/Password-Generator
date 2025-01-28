@@ -1,0 +1,38 @@
+# asks three questions, website name, action, device
+website_name = input("What website you need your new password for?")
+action = input("What action do you do on this website?")
+device = input("What device do you perform this action on?")
+
+# creates the password string
+password_string = "" # sets empty quote to password_string
+for letter in website_name:
+    if not letter in "aeiouAEIOU": # removes vowels
+        password_string += letter # adds value to variable (website_name) to password_string
+        password_string = password_string.upper() # function onto variable
+        password_string = password_string[0:2] # setting new variable as first two letters
+        
+# abbreviate password_string into a two letter phrase
+site_abbreviation = password_string # setting variable to password_string
+letters_in_site_name = len(website_name) # counting letters in website_name and outputs a number
+
+# creates the verb for the password
+verb = "" # empty string
+for letter in action: # for loop
+    if not letter in "aeiouAEIOU": # removes vowels
+        verb += letter 
+        verb = verb.lower() # lowecasing letters
+        verb = verb.replace(" ","") # removes space from verb
+
+# creates the subject for the password
+subject = ""
+for letter in device:
+    subject = device.upper()
+
+# randomly adds two special characters to the password
+import random # imports random module
+special_characters = "!@#$%^&*()_+"
+random_specials = ''.join(random.sample(special_characters, 2))
+
+# f string, call a variable within the string
+# puts multiple variable inside a string, calls them all before printing
+print(f'{website_name} is where I {action} on my {device}. Your password is',site_abbreviation + str(letters_in_site_name) + verb + subject + random_specials) # prints password
