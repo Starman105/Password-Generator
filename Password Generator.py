@@ -1,7 +1,7 @@
 # asks three questions, website name, action, device
-website_name = input("What website you need your new password for?")
-action = input("What action do you do on this website?")
-device = input("What device do you perform this action on?")
+website_name = input("What website you need your new password for? ")
+action = input("What action do you do on this website? ")
+device = input("What device do you perform this action on? ")
 
 # creates the password string
 password_string = "" # sets empty quote to password_string
@@ -10,7 +10,7 @@ for letter in website_name:
         password_string += letter # adds value to variable (website_name) to password_string
         password_string = password_string.upper() # function onto variable
         password_string = password_string[0:2] # setting new variable as first two letters
-        
+
 # abbreviate password_string into a two letter phrase
 site_abbreviation = password_string # setting variable to password_string
 letters_in_site_name = len(website_name) # counting letters in website_name and outputs a number
@@ -19,7 +19,7 @@ letters_in_site_name = len(website_name) # counting letters in website_name and 
 verb = "" # empty string
 for letter in action: # for loop
     if not letter in "aeiouAEIOU": # removes vowels
-        verb += letter 
+        verb += letter
         verb = verb.lower() # lowecasing letters
         verb = verb.replace(" ","") # removes space from verb
 
