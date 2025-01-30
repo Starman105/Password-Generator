@@ -10,7 +10,7 @@ for letter in website_name:
         password_string += letter # adds value to variable (website_name) to password_string
         password_string = password_string.upper() # function onto variable
         password_string = password_string[0:2] # setting new variable as first two letters
-
+        
 # abbreviate password_string into a two letter phrase
 site_abbreviation = password_string # setting variable to password_string
 letters_in_site_name = len(website_name) # counting letters in website_name and outputs a number
@@ -19,7 +19,7 @@ letters_in_site_name = len(website_name) # counting letters in website_name and 
 verb = "" # empty string
 for letter in action: # for loop
     if not letter in "aeiouAEIOU": # removes vowels
-        verb += letter
+        verb += letter 
         verb = verb.lower() # lowecasing letters
         verb = verb.replace(" ","") # removes space from verb
 
@@ -33,6 +33,8 @@ import random # imports random module
 special_characters = "!@#$%^&*()_+"
 random_specials = ''.join(random.sample(special_characters, 2))
 
-# f string, call a variable within the string
+# f string, evaluate variable within the string
 # puts multiple variable inside a string, calls them all before printing
-print(f'{website_name} is where I {action} on my {device}. Your password is',site_abbreviation + str(letters_in_site_name) + verb + subject + random_specials) # prints password
+print(f'{website_name} is where I {action} on my {device}') # prints website_name, action, device and forms it into a sentence
+
+print(f'Your password is {site_abbreviation +str(letters_in_site_name) + verb + subject + random_specials}') # prints password
