@@ -20,7 +20,7 @@ verb = "" # empty string
 for letter in action: # for loop
     if not letter in "aeiouAEIOU": # removes vowels
         verb += letter 
-        verb = verb.lower() # lowecasing letters
+        verb = verb.lower() # lowercasing letters
         verb = verb.replace(" ","") # removes space from verb
 
 # creates the subject for the password
@@ -28,13 +28,23 @@ subject = ""
 for letter in device:
     subject = device.upper()
 
-# randomly adds two special characters to the password
-import random # imports random module
-special_characters = "!@#$%^&*()_+"
-random_specials = ''.join(random.sample(special_characters, 2))
+# adds two special characters to the password based on the first letter of the website name
+specials = ""
+letter = website_name[0]
+if letter.lower() in "abcd":
+    specials = "!@"
+if letter.lower() in "efgh":
+    specials = "#$"
+if letter.lower() in "ijkl":
+    specials = "%^"
+if letter.lower() in "mnop":
+    specials = "&*"
+if letter.lower() in "qrstuvwxyz":
+    specials = "()"
+
 
 # f string, evaluate variable within the string
 # puts multiple variable inside a string, calls them all before printing
 print(f'{website_name} is where I {action} on my {device}') # prints website_name, action, device and forms it into a sentence
 
-print(f'Your password is {site_abbreviation +str(letters_in_site_name) + verb + subject + random_specials}') # prints password
+print(f'Your password is {site_abbreviation +str(letters_in_site_name) + verb + subject + specials}') # prints password
