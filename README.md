@@ -1,5 +1,5 @@
 # 🔐 Password Generator
-
+r
 🎉 Welcome to my first Python project for AP CSP! 🎉
 
 This password generator helps you craft a secure and relevant password. 🚀
